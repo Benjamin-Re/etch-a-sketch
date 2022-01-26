@@ -14,7 +14,7 @@ function createGrid(numItems) {
     }
     for (let i = 0; i < numItems ** 2; i++) {
         let newDiv = document.createElement("div");
-        let size = 800 / numItems;
+        let size = 700 / numItems;
         newDiv.style.cssText = `background-color: white; width: ${size}px; height: ${size}px`;
         container.appendChild(newDiv);
     }
