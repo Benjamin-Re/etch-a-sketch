@@ -28,10 +28,10 @@ function createGrid(numItems) {
     // Create a counter to keep track of the number of events
     divs.forEach(div => div.addEventListener("mouseover", changeColor));
     // Give each div a counter attribute
-    divs.forEach(div => div.setAttribute("data-count", 0));
+    divs.forEach(div => div.setAttribute("data-count", 1));
 }
 
-
+/* THIS IS A SMALL GIT BRANCH TEST*/
 
 // The function for the event listener adds a new class to the div
 function changeColor(e) {
