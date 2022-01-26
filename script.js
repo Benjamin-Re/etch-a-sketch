@@ -2,6 +2,8 @@
 const container = document.querySelector(".container");
 let rainbow = false;
 let gray = false;
+let erase = false;
+let color = "blue";
 
 
 
@@ -12,9 +14,11 @@ function createGrid(numItems) {
     for (let i = 0; i < numItems ** 2; i++) {
         let newDiv = document.createElement("div");
         let size = 800 / numItems;
-        newDiv.style.cssText = `background-color: red; width: ${size}px; height: ${size}px`;
+        newDiv.style.cssText = `background-color: white; width: ${size}px; height: ${size}px`;
         container.appendChild(newDiv);
     }
+    // Set default color
+    color = "blue";
     // Change the div color on hover
     // Get node list of all divs
     let divs = document.querySelectorAll(".container>div");
@@ -30,7 +34,7 @@ function createGrid(numItems) {
 
 // The function for the event listener adds a new class to the div
 function changeColor(e) {
-    let color = "blue";
+    
     if(rainbow){
         let red = Math.floor(Math.random()*255)+1;
         let green = Math.floor(Math.random()*255)+1;
@@ -41,9 +45,9 @@ function changeColor(e) {
         if(currentData < 10){
             e.target.setAttribute("data-count", +currentData+1);
         }
-        color = `rgb(0, 0, 0, ${currentData/10})`;
-        console.log(e.target.getAttribute("data-count"));
- 
+        color = `rgb(0, 0, 0, ${currentData/10})`; 
+    } else if (erase) {
+        color = "white";
     }
     e.target.style.backgroundColor = color;
 }
@@ -71,6 +75,7 @@ function drawRainbow(){
     } else {
         rainbow = true;
         gray = false;
+        erase = false;
     }
     
 }
@@ -85,7 +90,34 @@ function drawGray(){
     } else {
         gray = true;
         rainbow = false;
+        erase = false;
     }
+}
+
+// Get eraser button
+const eraseBtn = document.querySelector(".eraser");
+eraseBtn.addEventListener("click", drawErase);
+
+function drawErase(){
+    if(erase){
+        erase=false;
+    } else {
+        erase = true;
+        rainbow = false;
+        gray = false;
+    }
+}
+
+// Get color picker
+const picker = document.querySelector(".picker");
+picker.addEventListener("input", drawPicker);
+
+function drawPicker(e){
+    color = e.target.value;
+    console.log(e.target.value);
+    erase = false;
+    rainbow = false;
+    gray = false;
 }
 
 // Create the grid on page load
