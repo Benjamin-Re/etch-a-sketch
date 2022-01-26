@@ -6,3 +6,71 @@
     align-content: flex-start;
 }
 
+.outer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.header, .footer {
+    flex-basis: 100%;
+}
+
+.menu{
+    display:flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    gap: 16px;
+}
+
+body{
+    font-family: monospace;
+}
+
+.header {
+    font-size: large;
+    text-align: center;    
+
+}
+
+button {
+    font-family: monospace;
+    font-weight: bold;
+    padding: 15px 32px;
+    font-size: 16px;
+    border: none;
+    background-color: #2f75ff;
+    color: white;
+    margin: 0 auto;
+    width: 120px;
+}
+
+button:hover{
+    background-color: azure;
+    color: black;
+}
+
+.picker {
+    margin: 0 auto;
+    height: 50px;
+    width: 120px;
+    background-color: #2f75ff;
+    padding: 10px;
+}
+
+.picker:hover{
+    background-color: azure;
+}
+
+.size {
+    margin: 0 auto;
+}
+
+label {
+    margin: 0 auto;
+    font-family: monospace;
+}
+
+.footer{
+    text-align: center;
+}

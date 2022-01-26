@@ -9,15 +9,27 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
+    <div class="outer">
+        <div class="header"><h1>Etch-A-Sketch</h1></div>
+
+        
+            <div class="menu">
+                <button class="clear">Clear</button>
+                <button class="rainbow">Rainbow Colors</button>
+                <button class="gray">Gray scales</button>
+                <button class="eraser">Eraser</button>
+                <input type="color" class="picker" value="#2f75ff">
+                <input type="range" class="size" min="0" max=64 name="Size">
+                <label for="Size">Size</label>
+            </div>
+
+            <!--CANVAS-->
+            <div class="container">
+            </div>
+        
+
+        <div class="footer">Made by Benjamin-Re</div>
 
     </div>
-    <button class="clear">Clear</button>
-    <button class="rainbow">Rainbow Colors</button>
-    <button class="gray">Gray scales</button>
-    <button class="eraser">Eraser</button>
-    <input type="color" class="picker" value="#FFF700">
-    <input type="range" class="size" min="0" max=64 name="Size">
-    <label for="Size">Size</label>
 </body>
 </html>

@@ -3,7 +3,7 @@ const container = document.querySelector(".container");
 let rainbow = false;
 let gray = false;
 let erase = false;
-let color = "blue";
+let color = "#2f75ff";
 let numItems = undefined;
 
 
@@ -19,7 +19,7 @@ function createGrid(numItems) {
         container.appendChild(newDiv);
     }
     // Set default color
-    color = "blue";
+    color = "#2f75ff";
     // Change the div color on hover
     // Get node list of all divs
     let divs = document.querySelectorAll(".container>div");
@@ -31,7 +31,7 @@ function createGrid(numItems) {
     divs.forEach(div => div.setAttribute("data-count", 1));
 }
 
-/* THIS IS A SMALL GIT BRANCH TEST*/
+
 
 // The function for the event listener adds a new class to the div
 function changeColor(e) {
