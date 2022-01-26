@@ -4,6 +4,7 @@ let rainbow = false;
 let gray = false;
 let erase = false;
 let color = "blue";
+let numItems = undefined;
 
 
 
@@ -58,8 +59,6 @@ clearBtn.addEventListener("click", clear);
 function clear() {
     // Delete the old grid
     container.textContent="";
-    // Ask for number of cells
-    numItems = prompt("How many cells per side do you need?");
     // Create a new grid in the same space
     createGrid(numItems);
 }
@@ -118,6 +117,15 @@ function drawPicker(e){
     erase = false;
     rainbow = false;
     gray = false;
+}
+
+// Get the size range
+const sizeRange = document.querySelector(".size");
+sizeRange.addEventListener("change", setSize);
+
+function setSize(e){
+    numItems = e.target.value;
+    clear();
 }
 
 // Create the grid on page load
